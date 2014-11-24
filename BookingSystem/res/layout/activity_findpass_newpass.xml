@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13564239377"
+            android:textColor="@color/blue"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您好，请重设您的密码（6-16位字符）"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/password1"
+        style="@style/register_text"
+        android:layout_marginTop="20dip"
+        android:drawableLeft="@drawable/icon03"
+        android:hint="  输入新密码：6-16位字符"
+        android:password="true" />
+
+    <EditText
+        android:id="@+id/password2"
+        style="@style/register_text"
+        android:layout_marginTop="30dip"
+        android:drawableLeft="@drawable/icon03"
+        android:hint="  重新输入密码"
+        android:password="true" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/default_btn"
+        android:gravity="center"
+        android:text="提    交"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+</LinearLayout>

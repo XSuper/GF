@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_click_bg"
+    android:orientation="vertical"
+    android:padding="15dip" >
+
+    <ImageView
+        android:id="@+id/pl_image"
+        android:layout_width="fill_parent"
+        android:layout_height="380dip"
+        android:background="@drawable/imgdefault"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="-40dip"
+        android:background="@color/half_transparent"
+        android:gravity="center"
+        android:padding="5dip" >
+
+        <ImageView
+            android:layout_width="27dip"
+            android:layout_height="27dip"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/sex"
+             />
+
+        <TextView
+            android:id="@+id/pl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:paddingLeft="10dip"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pl_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:paddingLeft="10dip"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="职业: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pl_job"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="标签: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pl_tag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!--
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="价格: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pl_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="18sp" />
+
+        
+    </LinearLayout
+    -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="陪练价格: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pl_clubprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#FF0000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/18洞"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="练习场: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pl_practiceprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#FF0000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

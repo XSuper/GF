@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    android:padding="15dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/setall_bg_"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dip"
+            android:text="预 付 款"
+            android:textColor="#9B9792"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/payprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:textColor="@color/blue"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="RMB"
+            android:textColor="@color/blue"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:singleLine="true"
+            android:text="*剩余款项线下支付"
+            android:textColor="@color/red"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:gravity="center_vertical"
+        android:text="选择支付方式："
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/setall_bg_"
+        android:orientation="horizontal" >
+
+        <ImageView 
+            android:layout_gravity="center_vertical"
+            android:layout_width="100dip"
+            android:layout_height="40dip"
+            android:src="@drawable/title_logo"
+            android:padding="10dip"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="10dip"
+            android:text="支付宝支付"
+            android:textColor="#9B9792"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dip"
+            android:checked="true" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_margin="20dip"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/default_btn"
+        android:text="去支付"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

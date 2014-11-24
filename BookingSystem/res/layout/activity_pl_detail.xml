@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.golfeven.firstGolf"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rootLayout"
+            android:orientation="vertical" >
+
+            <com.ab.view.sliding.AbSlidingPlayView
+                android:id="@+id/ground_detail_PlayView"
+                android:layout_width="fill_parent"
+                android:layout_height="200dip" >
+            </com.ab.view.sliding.AbSlidingPlayView>
+
+            <TextView
+                android:id="@+id/pl_detail_place"
+                android:text=" TA的地址"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="30dip"
+                android:drawableLeft="@drawable/address"
+                android:background="@drawable/settop_bg"
+                style="@style/groundDetail_info"
+                android:drawableRight="@null"
+                />
+
+           
+            <TextView
+                android:background="@drawable/setcenter_bg"
+                android:id="@+id/pl_detail_introduce"
+                android:text=" 自我介绍"
+                android:drawableLeft="@drawable/gaikuang"
+                style="@style/groundDetail_info"
+                />
+
+            
+            <TextView
+                android:background="@drawable/setcenter_bg"
+                android:id="@+id/pl_detail_tel"
+                android:drawableLeft="@drawable/jianjie"
+                android:text=" 电话"
+                style="@style/groundDetail_info"
+                 />
+
+            <TextView
+                android:background="@drawable/setbottom_bg"
+                android:id="@+id/pl_detail_jiesong"
+                android:text=" 需要接送"
+                android:drawableLeft="@drawable/peitao"
+                style="@style/groundDetail_info"
+                android:drawableRight="@null"
+                />
+
+         
+       
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:orientation="horizontal"
+                >
+                <TextView 
+                    android:layout_width="0dip"
+                    android:layout_weight="8"
+                    android:layout_height="fill_parent"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:gravity="center"
+                    android:text="他/她的有空时间"
+                    
+                    />
+                <TextView 
+                    android:layout_width="100dip"
+                    android:layout_height="fill_parent"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:gravity="center"
+                    android:text="陪练类型"
+                    
+                    />
+                <View 
+                    android:layout_width="0dip"
+                    android:layout_weight="2.5"
+                    android:layout_height="fill_parent"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                
+                />
+            <ListView
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/pl_detail_list"
+                android:minHeight="200dip"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

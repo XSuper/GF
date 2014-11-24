@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bookingsystem.android"
+    android:versionCode="230"
+    android:versionName="2.3.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+    
+    
+    
+	 <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" >
+    </uses-permission>
+	
+    
+    <!-- 完全退出使用的权限 -->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!-- 检查网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 使用网络的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读写 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- wifi 使用权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 日志读取 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 读取联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.Manifest.permission.STATUS_BAR" />
+    <uses-permission android:name="android.Manifest.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.Manifest.permission.STATUS_BAR_SERVICE" />
+
+    <!-- 允许一个程序获取信息有关当前或最近运行的任务，一个缩略的任务状态，是否活动等等 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 允许使用PowerManager的 WakeLocks保持进程在休眠时从屏幕消失 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!-- 允许挂载和反挂载文件系统可移动存储 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 允许一个程序打开窗口使用 TYPE_SYSTEM_ALERT，显示在其他所有程序的顶层 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="com.bookingsystem.android.MApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/desk_icon"
+        android:label="@string/app_name"
+        android:theme="@style/ThemeActivity" >
+        <activity
+            android:name="com.bookingsystem.android.welcome.MwelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bookingsystem.android.welcome.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.ADWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.MyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.LXCActivity"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.bookingsystem.android.ui.QCActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.PLActivity"
+            android:screenOrientation="portrait" />
+      
+        <activity
+            android:name="com.bookingsystem.android.ui.GroundDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.PLDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.GaiKuangDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.PeiTaoDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.JianJieDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.IntroduceDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.ChoiceCityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.OftenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.BrowseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.MoreAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.QCOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.GroundOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.PLOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.OrderChoiceAvtivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.MyOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.AgreementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.FindPassValidateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.FindPassNewPassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.PLOrderDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.LXCOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.LXCOrderDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.QCOrderDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.GroundSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.SearchGroundNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.GroundInfoDetail"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.bookingsystem.android.service.DownloadAppService" >
+        </service>
+
+        <activity
+            android:name="com.bookingsystem.android.ui.MapActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="GG3IZ066m3Kh2KnUyD98nYou" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5388289656240b7bce001a34" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="test4main" />
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        
+        
+        <activity
+            android:name="com.alipay.android.app.sdk.WapPayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+       
+    </application>
+
+   
+
+</manifest>

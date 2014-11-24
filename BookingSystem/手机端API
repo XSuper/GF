@@ -1,0 +1,434 @@
+
+http://www.gocen.cn/static/agreement_mobile.html
+
+手机和后台交互API: 
+
+
+
+1、球场和练习场接口（完成）---new  添加距离排序
+	测试域名：http://www.a8.hk/	
+	请求地址：http://www.a8.hk/bookcourse/?c=mobile
+	post参数：
+		clubid :球场和练习场id
+		page :页数  默认1，
+		pagesize:每页显示条数 ，默认15
+		pricetype:价格类型：1:平日价，2：折扣价 3：每日低价 ，默认：0 所有
+		type：类型 1:俱乐部 2：练习场 ，默认：0 所有
+		playdate：打球日期 ,默认''
+		playtime:打球时间,默认''
+		province:省 ,默认''
+		lng：经度,默认''
+		lat：纬度,默认''
+		city：市,默认''
+		ordertype:排序规则：1：按时间 2：按价格，3：按距离，默认1
+		desctype：排序升降：DESC降序，ASC：升序，默认：desc
+	
+	返回：
+	 array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				name:球场或练习场名称
+				address：球场或练习场地址
+				type：类型 1:球场 2：练习场
+				model:球场模式
+				data：球场数据
+				pic1：球场或练习场图片地址1
+				pic2：球场或练习场图片地址2
+				pic3:球场或练习场图片地址3
+				pic4:球场或练习场图片地址4
+				id:俱乐部和练习场发布id
+				clubid俱乐部或练习场id
+				publishuid:信息发布人uid
+				playdate：打球日期
+				playtime：打球时间
+				positionnum：位置数量
+				status：状态：0:关闭，1：开启
+				pricetype：价格类型：1:平日价，2：折扣价 3：每日低价
+				price：金额
+				cost：配套:1：果岭费2：球童 3：球车 4：衣柜
+				dateline：信息创建时间
+				flag：推荐：h:头条 c：推荐 i:推荐首页  f:幻灯
+				totalnum：总位置数
+				surplusnum：剩余位置数
+				position：打球位置名称
+				juli:距离（单位米）
+
+
+一、球场和练习场接口：
+1、球场和练习场接口（完成）
+	测试域名：http://www.a8.hk/	
+	请求地址：http://www.a8.hk/bookcourse/?c=mobile
+	post参数：
+		clubid :球场和练习场id
+		page :页数  默认1，
+		pagesize:每页显示条数 ，默认15
+		pricetype:价格类型：1:平日价，2：折扣价 3：每日低价 ，默认：0 所有
+		type：类型 1:俱乐部 2：练习场 ，默认：0 所有
+		playdate：打球日期 ,默认''
+		playtime:打球时间,默认''
+		province:省 ,默认''
+		city：市,默认''
+		ordertype:排序规则：1：按时间 2：按价格，默认1
+		desctype：排序升降：DESC降序，ASC：升序，默认：desc
+	
+	返回：
+	 array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				name:球场或练习场名称
+				address：球场或练习场地址
+				type：类型 1:球场 2：练习场
+				model:球场模式
+				data：球场数据
+				pic1：球场或练习场图片地址1
+				pic2：球场或练习场图片地址2
+				pic3:球场或练习场图片地址3
+				pic4:球场或练习场图片地址4
+				id:俱乐部和练习场发布id
+				clubid俱乐部或练习场id
+				publishuid:信息发布人uid
+				playdate：打球日期
+				playtime：打球时间
+				positionnum：位置数量
+				status：状态：0:关闭，1：开启
+				pricetype：价格类型：1:平日价，2：折扣价 3：每日低价
+				price：金额
+				cost：配套:1：果岭费2：球童 3：球车 4：衣柜
+				dateline：信息创建时间
+				flag：推荐：h:头条 c：推荐 i:推荐首页  f:幻灯
+				totalnum：总位置数
+				surplusnum：剩余位置数
+				position：打球位置名称
+				
+	 
+	 
+2、球场和练习场详情（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=clubdetail
+		post参数：
+			clubid:球场和练习场id			
+	
+		返回：
+	 		array('err'=>0,'data'=>array(数据))
+	 		array('err'=>1,'data'=>'','msg'=>'id错误')
+	 		数据说明：
+			  `id` ,    
+			  `type`:'类型 1:球场 2：练习场', 
+			  `status`:'状态 0:没通过 1：通过',  
+			  `flag` : '推荐：h:头条 c：推荐 i:推荐首页  f:幻灯', 
+			  `publishuid`:'发布用户id',
+			  `name`:'名称',
+			  `address`:'地址',
+			  `model`:'球场模式',
+			  `data`:'球场数据',
+			  `createdate`:'创建时间',
+			  `traffic`:'交通',
+			  `environment`:'环境',
+			  `tourist`:'客源',
+			  `designer`:'设计师',
+			  `area` :'球场面积',
+			  `length`:'球场长度',
+			  `greengrass`:'果岭草种',
+			  `fairwaygrass` :'球道草种',
+			  `introduction` : '简介',
+			  `matching` : '配套',
+			  `pic1` ：'图片1',
+			  `pic2` ： '图片2',
+			  `pic3` ：'图片3',
+			  `pic4` ：'图片4',
+			  `pic5` ：'图片5',
+			  `province` ：'省',
+			  `city` ： '市',
+			  `price` ： '价格', 		
+3、注册（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=register
+		post参数：
+			mobile:手机号		
+			pwd:密码			
+			confirmpwd：确认密码
+			smscode：手机验证码
+		返回：	 		
+	 		$this->publicFunction->json_error('mobile错误');
+	 		$this->publicFunction->json_error('密码非法');	
+	 		$this->publicFunction->json_error('2次密码不一致');
+	 		$this->publicFunction->json_error('验证码不能为空');
+	 		$this->publicFunction->json_error('手机号已存在');
+	 		$this->publicFunction->json_error('验证码不正确');
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				mid:用户uid
+				mobile：手机号
+				token：用户认证
+4、登陆（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=login
+		post参数：
+			mobile:手机号		
+			pwd:密码			
+			
+		返回：	 		
+	 		$this->publicFunction->json_error('mobile错误');
+	 		$this->publicFunction->json_error('密码非法');	
+			$this->publicFunction->json_error('登陆失败');
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				mid:用户uid
+				mobile：手机号
+				token：用户认证
+				clubcount:常去的球场数
+					  				  
+5、我的订单（完成）
+		请求地址：http://book.golfeven.cn/?c=mobile&a=myorder
+		post参数：
+			uid:用户uid		
+			page :页数  默认1，
+			pagesize:每页显示条数 ，默认15	
+			type:类型 1:球场 2:练习场  4:陪练，默认为0 所有
+			status：状态 0:未支付 1：已支付 ，默认为-1 所有订单
+			token：用户认证
+			
+		返回：
+	 		array('err'=>0,'data'=>array(数据))
+	 		array('err'=>1,'data'=>'','msg'=>'uid错误')
+	 		array('err'=>1,'data'=>'','msg'=>'token非法访问')
+	 返回参数说明：
+				id:订单id
+				ordernum：订单号
+				objid：商品id:球场id|团购商品id|陪打uid
+				uid:订单人uid
+				type：类型 1:球场 2:练习场  3：团购商品 4：陪打
+			  	status :状态 0:未支付 1：已支付 2:已完成
+			  	source :来源  1:web 2：m端
+			  	ordertype:支付类型 1:全额 2：预付定金
+			  	totalprice :订单总金额
+			  	goodsnum :商品数量
+			  	payprice :已支付价格
+			  	number :人数
+			  	deladdrid ：收货地址
+			  	dateline ：创建时间
+			  	ordersucdate ：订单成功时间
+			  	name：球场或练习场名称
+6、订单详情（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=detailorder
+		post参数：
+			orderid:订单id		
+			uid:用户uid			
+			token：用户认证
+			
+		返回：
+	 		array('err'=>0,'data'=>array(数据))
+	 		$this->publicFunction->json_error('orderid错误');
+	 		$this->publicFunction->json_error('token非法访问'); 		
+	 返回参数说明：
+				id:订单id
+				ordernum：订单号
+				objid：商品id:球场id|团购商品id|陪打uid
+				uid:订单人uid
+				type：类型 1:球场 2:练习场  3：团购商品 4：陪打
+			  	status :状态 0:未支付 1：已支付 2:已完成
+			  	source :来源  1:web 2：m端
+			  	ordertype:支付类型 1:全额 2：预付定金
+			  	totalprice :订单总金额
+			  	goodsnum :商品数量
+			  	payprice :已支付价格
+			  	number :人数
+			  	deladdrid ：收货地址
+			  	dateline ：创建时间
+			  	ordersucdate ：订单成功时间
+			  	name：球场或练习场名称 		
+7、添加订单（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=addorder
+		post参数：
+			id:球场或练习场发布id或者陪练发布id		
+			number:预定人数			
+			ordertype：支付类型 1:全额 2：预付定金
+			type:类型 1:球场 2:练习场  3：团购商品 4：陪打
+			totalprice:订单总金额
+			payprice:已支付价格
+			uid:预订人uid
+			token:用户认证
+		返回：	 		
+	 		$this->publicFunction->json_error('id错误');
+	 		$this->publicFunction->json_error('token非法访问'); 		
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				orderid:订单id	
+8、我常去的球场数量（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=ordercount
+		post参数：
+			status:订单状态：0：所有，1：支付和完成的
+			uid：用户uid
+			token:用户认证
+		返回：	 		
+	 		$this->publicFunction->json_error('uid错误');
+	 		$this->publicFunction->json_error('token非法访问'); 		
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+				clubcount:球场数量			
+9、我常去的球场列表（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=orderlist
+		post参数：
+			status:订单状态：0：所有，1：支付和完成的
+			uid：用户uid
+			token:用户认证
+			page :页数  默认1，
+			pagesize:每页显示条数 ，默认15				
+		返回：	 		
+	 		$this->publicFunction->json_error('uid错误');
+	 		$this->publicFunction->json_error('token非法访问'); 		
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+			  `id` ,    
+			  `type`:'类型 1:球场 2：练习场', 
+			  `name`:'名称',
+			  `address`:'地址',
+			  `pic1` ：'图片1',	
+			  `bpic1` ：'大图片1',		
+			  `mpic1` ：'中图片1',				
+10、注册手机码（完成）
+		请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=smscode
+		post参数：
+			mobile:手机号			
+		返回：	 		
+	 		$this->publicFunction->json_error('短信操作过于频繁');
+	 		$this->publicFunction->json_error('短信发送失败');
+	 		$this->publicFunction->json_error('插入sms错误');	
+	 		array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+			  `smscode` ：短信验证码,    	
+11、球场和练习场接口（完成）
+	请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=sparring
+	post参数：
+		page :页数  默认1，
+		pagesize:每页显示条数 ，默认15
+		type：类型     0：所有1:帅哥陪练 2:美女陪练 3:高球发烧友 4:专业教练；默认：0 所有
+		province:省 ,默认''
+		city：市,默认''
+	
+	返回：
+	 array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+	 			uid:陪练id
+				username:陪练名称
+				flag：推荐：h:头条 c：推荐 i:推荐首页  f:幻灯
+				sex：性别 1:男 2：女
+				isshuttle：是否接送 1:是2：否
+				category：类别 1:帅哥陪练 2:美女陪练 3:高球发烧友 4:专业教练	
+				label:标签(longlegged：长腿;sexy:性感；lolita：萝莉；longhair：长发;lovely：可爱；face:素颜
+						   spirited:英俊;handsome:帅气；humor：幽默;	connotation：内涵;romantic:风流;student:学生
+						   primary:初级教练；intermediate:中级教练；senior:高级教练；silver:银牌教练 ;gold:金牌教练
+						   novice：新手；80：80杆内 ;90:90杆内;100:100杆内;110：110杆内；120;120杆内       
+							)
+				age：年龄
+				profession：职业
+				mobile：手机号码
+				province：省
+				city：市			
+				address：陪练地址
+				freetime：有空时间
+				price:陪练价格
+				click：点击量
+				pic1：陪练图片地址1
+				pic2：陪练图片地址2
+				pic3:陪练图片地址3
+				pic4:陪练图片地址4				
+				intro：简介
+				dateline：创建时间		
+12、球场和练习场详情接口（完成）
+	请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=sparringdetail
+	post参数：
+		sparringid :陪练id
+	
+	返回：
+	 array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+	 			uid:陪练id
+				username:陪练名称
+				flag：推荐：h:头条 c：推荐 i:推荐首页  f:幻灯
+				sex：性别 1:男 2：女
+				isshuttle：是否接送 1:是2：否
+				category：类别 1:帅哥陪练 2:美女陪练 3:高球发烧友 4:专业教练	
+				label:标签(longlegged：长腿;sexy:性感；lolita：萝莉；longhair：长发;lovely：可爱；face:素颜
+						   spirited:英俊;handsome:帅气；humor：幽默;	connotation：内涵;romantic:风流;student:学生
+						   primary:初级教练；intermediate:中级教练；senior:高级教练；silver:银牌教练 ;gold:金牌教练
+						   novice：新手；80：80杆内 ;90:90杆内;100:100杆内;110：110杆内；120;120杆内       
+							)
+				age：年龄
+				profession：职业
+				mobile：手机号码
+				province：省
+				city：市			
+				address：陪练地址
+				freetime：有空时间
+				clubprice:球场价格
+				practiceprice:练习场价格
+				click：点击量
+				pic1：陪练图片地址1
+				pic2：陪练图片地址2
+				pic3:陪练图片地址3
+				pic4:陪练图片地址4				
+				intro：简介
+				dateline：创建时间			
+13、陪练发布接口（完成）
+	请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=sparringpub
+	post参数：
+		uid :陪练id
+		playdate:陪练时间
+	返回：
+	 array('err'=>0,'data'=>array(数据))
+	 返回参数说明：
+	 			id：发布陪练价格id	 			
+	 			uid:陪练id
+				username:陪练名称
+				publishuid：发布用户id
+				playdate：陪练日期
+				playstarttime：打球开始时间
+				playendtime：打球结束时间	
+				status:状态：0:关闭，1：开启
+				clubprice：球场价格
+				practiceprice：练习场价格
+				dateline：创建时间		
+				
+				6、订单状态详情（完成）
+请求地址：http://www.a8.hk/bookcourse/?c=mobile&a=orderstatus
+post参数：
+orderid:订单id	
+uid:用户uid	
+
+返回：
+ 	 array('err'=>0,'data'=>array(数据))
+ 	 $this->publicFunction->json_error('orderid错误');
+ 	 $this->publicFunction->json_error('token非法访问'); 	
+ 返回参数说明：
+id:订单id
+ordernum：订单号
+objid：商品id:球场id|团购商品id|陪打uid
+uid:订单人uid
+type：类型 1:球场 2:练习场  3：团购商品 4：陪打
+  	status :状态 0:未支付 1：已支付 2:已完成
+  	source :来源  1:web 2：m端
+  	ordertype:支付类型 1:全额 2：预付定金
+  	totalprice :订单总金额
+  	goodsnum :商品数量
+  	payprice :已支付价格
+  	number :人数
+  	deladdrid ：收货地址
+  	dateline ：创建时间
+  	ordersucdate ：订单成功时间	
+  	
+  	
+  	pay_channel
+client_type
+【吐槽】silence--刘青
+2014/8/13 16:20:16
+这两个参数给我传 记得
+【吐槽】silence--刘青
+2014/8/13 16:20:24
+client_type	客户端类型	String	是	1.	安卓
+2.	ios
+3   windows
+【吐槽】silence--刘青
+2014/8/13 16:20:31
+pay_channel	支付渠道	String	是	1:支付宝
+2 财富通
+3:快钱
+4:虚拟支付
+5 联动优势
+  	   
+							  								  					  

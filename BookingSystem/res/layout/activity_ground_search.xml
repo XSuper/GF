@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/view_city"
+        style="@style/ground_search_linearlayout"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/settop_bg" >
+
+        <TextView
+            style="@style/ground_search_prompt"
+            android:text="城市选择" />
+
+        <TextView
+            android:id="@+id/content_city"
+            style="@style/ground_search_content"
+            />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_date"
+        style="@style/ground_search_linearlayout"
+        android:background="@drawable/setcenter_bg" >
+
+        <TextView
+            style="@style/ground_search_prompt"
+            android:text="打球日期" />
+        <TextView
+            android:id="@+id/content_date"
+            style="@style/ground_search_content"
+            android:paddingRight="0dip"
+            android:layout_weight="3"
+            />
+        <TextView
+            android:id="@+id/content_xingqi"
+            style="@style/ground_search_content"
+            android:paddingRight="25dip"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_time"
+        style="@style/ground_search_linearlayout"
+        android:background="@drawable/setcenter_bg" >
+
+        <TextView
+            style="@style/ground_search_prompt"
+            android:text="打球时间" />
+        <TextView
+            android:id="@+id/content_time"
+            style="@style/ground_search_content"
+            />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_name"
+        style="@style/ground_search_linearlayout"
+        android:background="@drawable/setbottom_bg" >
+
+        <TextView
+            style="@style/ground_search_prompt"
+            android:text="球场名字" />
+        <TextView
+            android:hint="球场名称"
+            android:id="@+id/content_name"
+            style="@style/ground_search_content"
+            />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/arrow_right" />
+    </LinearLayout>
+    
+    <Button 
+        android:layout_marginTop="30dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_width="230dip"
+        android:layout_height="40dip"
+        android:id="@+id/submit"
+        android:text="立即搜索"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@drawable/default_btn"
+        android:layout_gravity="center_horizontal"
+        
+        />
+
+</LinearLayout>

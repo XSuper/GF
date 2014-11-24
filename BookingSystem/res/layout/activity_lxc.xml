@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/paixu"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/paixu_destance"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="40dip"
+            android:layout_marginRight="40dip"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@drawable/paixu_radio"
+            android:gravity="center"
+            android:text="距离排序"
+            android:textColor="@color/color_btm_navi_txt" />
+
+        <RadioButton
+            android:id="@+id/paixu_time"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@drawable/paixu_radio"
+            android:gravity="center"
+            android:text="时间排序"
+            android:textColor="@color/color_btm_navi_txt"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/paixu_price"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="40dip"
+            android:layout_marginRight="40dip"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@drawable/paixu_radio"
+            android:gravity="center"
+            android:text="价格排序"
+            android:textColor="@color/color_btm_navi_txt" />
+    </RadioGroup>
+
+    <com.ab.view.pullview.AbPullListView
+        android:id="@+id/ground_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

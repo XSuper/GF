@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="球场模式："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/model"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="球场数据："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/data"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="建立时间："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/createdate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="设 计 师："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/designer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="球场面积："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="球道长度："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/length"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="果岭草种："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/greengrass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="球道草种："
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/fairwaygrass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#494947"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="46dip"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/input_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:gravity="center"
+                android:text="导航"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:gravity="center"
+                android:src="@drawable/arrow_grey" />
+        </LinearLayout>
+
+        <TextView 
+            android:layout_marginTop="16dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="球场简介"
+            />
+        <TextView
+            android:id="@+id/jianjie"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/input_bg"
+            android:padding="10dip" />
+
+        <TextView 
+            android:layout_marginTop="16dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="球场配套"
+           />
+        <TextView
+            android:id="@+id/peitao"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginBottom="16dip"
+            android:background="@drawable/input_bg"
+            android:lineSpacingExtra="3dip"
+            android:lineSpacingMultiplier="1.5"
+            android:padding="10dip" />
+    </LinearLayout>
+
+</ScrollView>

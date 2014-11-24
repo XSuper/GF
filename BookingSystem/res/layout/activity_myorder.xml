@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/ordertype"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_notpay"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/top_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="待付款"
+            android:checked="true"
+            android:textColor="@color/color_btm_navi_txt"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_pay"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/top_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已付款"
+            android:textColor="@color/color_btm_navi_txt"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <com.ab.view.pullview.AbPullListView
+        android:id="@+id/order_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:id="@+id/emptyView"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="没有待付款订单"
+            android:textSize="18sp"
+            
+            />
+        <TextView 
+            android:layout_marginTop="10dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回首页"
+            android:textSize="18sp"
+            android:id="@+id/back"
+            />
+    </LinearLayout>
+
+</LinearLayout>

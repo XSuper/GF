@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/bg"
+    >
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_margin="20dip"
+        android:text="球场配套"
+        />
+    <TextView 
+        android:id="@+id/peitao"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginLeft="20dip"
+        android:background="@drawable/input_bg"
+        android:lineSpacingExtra="3dip"
+        android:lineSpacingMultiplier="1.5"
+        />
+        
+    
+
+</LinearLayout>

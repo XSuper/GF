@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自定义的弹框 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:minWidth="120dip"
+        android:singleLine="true"
+        android:padding="10dip"
+        android:layout_height="60dip"
+        android:background="@drawable/progress_bg"
+        android:layout_gravity="center_horizontal|top"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15sp" >
+    </TextView>
+
+
+</LinearLayout>

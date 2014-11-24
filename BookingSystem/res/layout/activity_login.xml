@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+    <EditText 
+        style="@style/register_text"
+        android:id="@+id/phonenum"
+        android:hint="  手机号"
+        android:inputType="number"
+        android:layout_marginTop="30dip"
+        android:drawableLeft="@drawable/icon01"
+        />
+    <EditText 
+        style="@style/register_text"
+        android:id="@+id/password"
+        android:hint="  密码:6-16位字符"
+        android:layout_marginTop="30dip"
+        android:drawableLeft="@drawable/icon03"
+        android:password="true"
+        />
+    <TextView 
+        android:padding="8dip"
+        android:gravity="right"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="忘记密码？"
+       	android:textColor="@color/blue"
+       	android:textSize="16sp"
+       	android:id="@+id/forgetPass"
+        />
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:gravity="center"
+        android:text="登    陆"
+        android:layout_marginTop="40dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:background="@drawable/default_btn"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:id="@+id/submit"
+        />
+
+</LinearLayout>

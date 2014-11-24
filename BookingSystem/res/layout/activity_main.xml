@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/navi_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@drawable/gst_top_bg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/top_left"
+            android:layout_width="70dip"
+            android:layout_height="50dip"
+            android:background="@null"
+            android:drawableRight="@drawable/top_place_arrow"
+            android:gravity="center"
+            android:text="位置"
+            android:textColor="@color/color_white_txt"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_marginLeft="5dip"
+            android:id="@+id/top_line_left"
+            android:layout_width="1px"
+            android:layout_height="40dip"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/top_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="高盛通订场"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/top_line_right"
+            android:layout_width="1px"
+            android:layout_height="40dip"
+            android:visibility="gone"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/top_right"
+            android:layout_width="70dip"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/top_right1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="@color/color_white_txt"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <com.ab.view.sample.AbUnSlideViewPager
+        android:id="@+id/navi_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:padding="0dip" />
+
+    <RadioGroup
+        android:id="@+id/navi_switcher"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:checkedButton="@+id/navi_switcher_item_qc"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/navi_switcher_item_qc"
+            style="@style/radio_btn_style"
+            android:text="@string/navi_qc" />
+
+        <RadioButton
+            android:id="@+id/navi_switcher_item_lxc"
+            style="@style/radio_btn_style"
+            android:text="@string/navi_lxc" />
+        
+        <RadioButton
+            android:id="@+id/navi_switcher_item_pl"
+            style="@style/radio_btn_style"
+            android:text="@string/navi_pl" />
+
+        <RadioButton
+            android:id="@+id/navi_switcher_item_me"
+            style="@style/radio_btn_style"
+            android:text="@string/navi_me" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/bg"
+    android:padding="10dip"
+    >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        
+        ></LinearLayout>
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_margin="20dip"
+        android:text="球会简介"
+        />
+    <TextView 
+        android:id="@+id/jianjie"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginLeft="20dip"
+        android:background="@drawable/input_bg"
+        />
+        
+    
+
+</LinearLayout>

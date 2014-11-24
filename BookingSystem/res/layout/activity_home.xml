@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="4dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="2dip"
+        android:layout_weight="416"
+        android:background="@drawable/a_pic1"
+        android:scaleType="fitXY" >
+
+        <com.bookingsystem.android.view.ADView
+            android:id="@+id/adview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:visibility="invisible" 
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="860"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/clube"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="2dip"
+                android:layout_weight="308"
+                android:background="@drawable/home_bg_qc"
+                android:gravity="center_vertical|right"
+                android:paddingRight="30dip"
+                android:text="找球场" />
+
+            <Button
+                android:id="@+id/boy"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="224"
+                android:background="@drawable/home_bg_sg"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dip"
+                android:text="找帅哥陪练" />
+
+            <Button
+                android:id="@+id/teacher"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="239"
+                android:background="@drawable/home_bg_jl"
+                android:gravity="top|left"
+                android:paddingLeft="20dip"
+                android:paddingTop="30dip"
+                android:text="找教练" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/girl"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="2dip"
+                android:layout_weight="225"
+                android:background="@drawable/home_bg_mv"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="12dip"
+                android:text="找美女陪练" />
+
+            <Button
+                android:id="@+id/lxc"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="306"
+                android:background="@drawable/home_bg_lxc"
+                android:gravity="right|center_vertical"
+                android:paddingRight="25dip"
+                android:text="找练习场" />
+
+            <Button
+                android:id="@+id/my"
+                style="@style/home_btn_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginBottom="1dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="239"
+                android:background="@drawable/home_bg_wd"
+                android:gravity="top|left"
+                android:paddingLeft="20dip"
+                android:paddingTop="30dip"
+                android:text="我的" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

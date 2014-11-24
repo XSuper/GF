@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_click_bg"
+    android:orientation="vertical"
+    android:padding="15dip" >
+
+    <ImageView
+        android:id="@+id/groundimages_image"
+        android:layout_width="fill_parent"
+        android:layout_height="380dip"
+        android:scaleType="centerCrop" 
+        android:background="@drawable/imgdefault"
+        />
+
+    <TextView
+        android:layout_marginTop="-40dip"
+        android:id="@+id/groundimages_title"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:background="@color/half_transparent"
+        android:padding="5dip"
+        android:paddingLeft="10dip"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="地址: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/groundimages_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="球洞: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/groundimages_hole"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="类型: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/groundimages_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:text="价格: "
+            android:textColor="#414141"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/groundimages_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textColor="#414141"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
