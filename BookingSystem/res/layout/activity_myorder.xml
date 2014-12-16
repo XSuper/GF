@@ -35,9 +35,42 @@
             android:text="已付款"
             android:textColor="@color/color_btm_navi_txt"
             android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/radio_status3"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/top_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="申请退款"
+            android:textColor="@color/color_btm_navi_txt"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/radio_status5"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/top_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已审核"
+            android:textColor="@color/color_btm_navi_txt"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/radio_status4"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/top_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="退款成功"
+            android:textColor="@color/color_btm_navi_txt"
+            android:textSize="15sp" />
     </RadioGroup>
 
-    <com.ab.view.pullview.AbPullListView
+    <com.bookingsystem.android.view.DelSlideListView
         android:id="@+id/order_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />

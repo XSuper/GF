@@ -47,6 +47,9 @@ public class LXCOrderDetail extends MBaseActivity {
 	TextView ordernum;
 	@InjectView(id = R.id.ordertime)
 	TextView ordertime;
+	
+	@InjectView(id = R.id.prompttxt)
+	TextView prompt;
 
 	@InjectView(id = R.id.submit)
 	Button submit;
@@ -61,6 +64,7 @@ public class LXCOrderDetail extends MBaseActivity {
 	@InjectExtra(name="id")String id;
 	@InjectExtra(name = "pay")
 	boolean pay;
+	int status ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -72,7 +76,7 @@ public class LXCOrderDetail extends MBaseActivity {
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
 		mAbTitleBar.setTitleText("提交订单");
 		mAbTitleBar.getLogoView().setBackgroundResource(R.drawable.back);
-		
+		status = getIntent().getIntExtra("status", 0);
 		loadData();
 	}
 	JSONObject jo;
@@ -135,6 +139,19 @@ public class LXCOrderDetail extends MBaseActivity {
 						"price");
 				ViewUtil.bindView(onePrice, JSONUtil.getString(jo, "price"),
 						"price");
+				switch (status) {
+				case 0:
+				case 1:
+				case 2:
+					ViewUtil.bindView(prompt, "预  付  款");
+					break;
+				case 3:
+				case 4:
+				case 5:
+					ViewUtil.bindView(prompt, "退款金额");
+					break;
+
+				}
 
 			}
 		});

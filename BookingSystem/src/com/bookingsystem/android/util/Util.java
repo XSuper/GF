@@ -1,7 +1,10 @@
 package com.bookingsystem.android.util;
 
+import com.bookingsystem.android.R;
+
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -27,4 +30,28 @@ public class Util {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1)); 
         listView.setLayoutParams(params); 
     } 
+	
+	
+	public static boolean setWeatherImg(ImageView img,String weather){
+		if(weather.contains("雷")){
+			img.setImageResource(R.drawable.lei);
+			return true;
+		}else if(weather.contains("雪")){
+			img.setImageResource(R.drawable.xue);
+			return true;
+		}else if(weather.contains("风")){
+			img.setImageResource(R.drawable.feng);
+			return true;
+		}else if(weather.contains("雨")){
+			img.setImageResource(R.drawable.yu);
+			return true;
+		}else if(weather.contains("多云")){
+			img.setImageResource(R.drawable.duoyun);
+			return true;
+		}else if(weather.contains("晴")){
+			img.setImageResource(R.drawable.qin);
+			return true;
+		}
+		return false;
+	}
 }

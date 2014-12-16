@@ -19,6 +19,8 @@ import net.duohuo.dhroid.net.Response;
 import net.duohuo.dhroid.net.cache.CachePolicy;
 import net.duohuo.dhroid.util.ViewUtil;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.DialogInterface;
@@ -28,20 +30,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ab.global.AbConstant;
 import com.ab.util.AbDateUtil;
 import com.ab.util.AbStrUtil;
-import com.ab.view.sliding.AbSlidingPlayView;
 import com.ab.view.wheel.AbWheelUtil;
 import com.ab.view.wheel.AbWheelView;
 import com.bookingsystem.android.Constant;
 import com.bookingsystem.android.MApplication;
 import com.bookingsystem.android.R;
 import com.bookingsystem.android.util.Util;
+import com.google.gson.JsonArray;
 
 public class GroundDetail extends MBaseActivity implements OnClickListener {
 	
@@ -57,12 +59,26 @@ public class GroundDetail extends MBaseActivity implements OnClickListener {
 	
 
 	@InjectView(id = R.id.ground_detail_PlayView)
-	AbSlidingPlayView playView;
+	ImageView playView;
 	@InjectView(id = R.id.ground_detail_list)
 	ListView list;
+	
+	
+	@InjectView(id = R.id.weather)
+	RelativeLayout weather;
+	@InjectView(id = R.id.weather_img)
+	ImageView weatherimg;
+	@InjectView(id = R.id.wendu)
+	TextView wendu;
+	String weatherinfo;//天气json
+	
+	
+	
 
 	@InjectExtra(name = "id")
 	String id;
+	@InjectExtra(name = "city")
+	String city;
 
 	int type = 1;
 	View mDateView, mtimeView;
@@ -186,6 +202,8 @@ public class GroundDetail extends MBaseActivity implements OnClickListener {
 
 			}
 		});
+		
+		loadWeather();
 	}
 
 	public void initView() {
@@ -213,8 +231,6 @@ public class GroundDetail extends MBaseActivity implements OnClickListener {
 
 			@Override
 			public void doInUI(Response response, Integer transfer) {
-				// TODO Auto-generated method stub
-
 				jo = response.jSONFromData();
 				detailinfo.setOnClickListener(GroundDetail.this);
 				type = JSONUtil.getInt(jo, "type");
@@ -226,31 +242,32 @@ public class GroundDetail extends MBaseActivity implements OnClickListener {
 				srcs.add(JSONUtil.getString(jo, "mpic4"));
 				srcs.add(JSONUtil.getString(jo, "mpic5"));
 
-				initPlayView(srcs, playView);
+				ViewUtil.bindView(playView,JSONUtil.getString(jo, "pic1"));
 			}
 		});
 
 	}
 
-	/**
-	 * 初始化图集
-	 * 
-	 * @param srcs
-	 * @param playView
-	 */
-	public void initPlayView(ArrayList<String> srcs, AbSlidingPlayView playView) {
-		for (String string : srcs) {
-			if (!AbStrUtil.isEmpty(string)) {
-				ImageView view = new ImageView(this);
-				view.setBackgroundResource(R.drawable.imgdefault);
-				view.setLayoutParams(layoutParamsFF);
-				view.setScaleType(ScaleType.CENTER_CROP);
-				ViewUtil.bindView(view, string);
-				playView.addView(view);
-			}
-		}
-		playView.startPlay();
-	}
+//	/**
+//	 * 初始化图集
+//	 * 
+//	 * @param srcs
+//	 * @param playView
+//	 */
+//	public void initPlayView(ArrayList<String> srcs, AbSlidingPlayView playView) {
+//		for (String string : srcs) {
+//			if (!AbStrUtil.isEmpty(string)) {
+//				ImageView view = new ImageView(this);
+//				view.setBackgroundResource(R.drawable.imgdefault);
+//				view.setLayoutParams(layoutParamsFF);
+//				view.setScaleType(ScaleType.CENTER_CROP);
+//				ViewUtil.bindView(view, string);
+//				playView.addView(view);
+//			}
+//		}
+//		playView.startPlay();
+//	}
+	
 
 	// 时间选择器
 	public void initWheelTime2() {
@@ -381,6 +398,44 @@ public class GroundDetail extends MBaseActivity implements OnClickListener {
 
 	}
 
+	
+	public void loadWeather(){
+//		http://www.gocen.cn/?c=mobile&a=weather&city=%E4%B8%8A%E6%B5%B7
+		DhNet weatherNet = new DhNet(Constant.BASEURL+"&a=weather&city="+city);
+		weatherNet.doGet(new NetTask(this) {
+			
+			@Override
+			public void doInUI(Response response, Integer transfer) {
+
+				int code = JSONUtil.getInt(response.jSON(), "err");
+				if(code ==0){
+					weather.setVisibility(View.VISIBLE);
+					try {
+						JSONArray list = response.jSON().getJSONArray("data");
+						weatherinfo = JSONUtil.getString(response.jSON(), "data");
+						JSONObject jo = (JSONObject) list.get(0);
+						wendu.setText(JSONUtil.getString(jo, "temperature"));
+						Util.setWeatherImg(weatherimg, JSONUtil.getString(jo, "weather"));
+						weather.setOnClickListener(new OnClickListener() {
+							
+							@Override
+							public void onClick(View v) {
+								Intent i = new Intent(GroundDetail.this, WeatherActivity.class);
+								i.putExtra("weatherinfo", weatherinfo);
+								startActivity(i);
+							}
+						});
+						
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+				
+			}
+		});
+	}
 	private void loadlistbytime() {
 		mAdapter.addparam("playdate", dateView.getText().toString());
 		mAdapter.addparam("playtime", time.getText().toString());

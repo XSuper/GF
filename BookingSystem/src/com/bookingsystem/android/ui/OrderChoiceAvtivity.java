@@ -26,7 +26,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.alipay.android.app.sdk.AliPay;
+import com.alipay.sdk.app.PayTask;
 import com.bookingsystem.android.Constant;
 import com.bookingsystem.android.MApplication;
 import com.bookingsystem.android.R;
@@ -182,9 +182,12 @@ public class OrderChoiceAvtivity extends MBaseActivity implements OnClickListene
 		final String orderInfo = info;
 		new Thread() {
 			public void run() {
-				AliPay alipay = new AliPay(OrderChoiceAvtivity.this, mHandler);
 				//设置为沙箱模式，不设置默认为线上环境
 				//alipay.setSandBox(true);
+				
+				// 构造PayTask 对象
+				PayTask alipay = new PayTask(OrderChoiceAvtivity.this);
+				// 调用支付接口
 				String result = alipay.pay(orderInfo);
 
 				Log.i(TAG, "result = " + result);

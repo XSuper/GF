@@ -9,6 +9,7 @@ import net.duohuo.dhroid.ioc.IocContainer;
 import android.app.Application;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
@@ -22,10 +23,12 @@ public class Dhroid {
 		Ioc.initApplication(app);
 		//对话框的配置
 		Ioc.bind(DialogImpl.class).to(IDialog.class).scope(InstanceScope.SCOPE_PROTOTYPE);
-		
 		ImageLoaderConfiguration	 imageconfig = new ImageLoaderConfiguration.Builder(app.getApplicationContext())
 		.threadPriority(Thread.NORM_PRIORITY - 2)
 		.denyCacheImageMultipleSizesInMemory()
+//		.memoryCache()
+		 .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
+        .memoryCacheSize(2 * 1024 * 1024)
 		.diskCacheFileNameGenerator(new Md5FileNameGenerator())
 		.diskCacheSize(50 * 1024 * 1024) // 50 Mb
 		.tasksProcessingOrder(QueueProcessingType.LIFO)

@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bookingsystem.android"
-    android:versionCode="230"
-    android:versionName="2.3.0" >
+    android:versionCode="240"
+    android:versionName="2.4.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
-    
-    
-    
-	 <supports-screens
+
+    <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
+
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
     </uses-permission>
     <uses-permission android:name="android.permission.CALL_PHONE" >
     </uses-permission>
-	
-    
+
     <!-- 完全退出使用的权限 -->
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
     <!-- 检查网络状态的权限 -->
@@ -88,13 +86,12 @@
         <activity
             android:name="com.bookingsystem.android.ui.LXCActivity"
             android:screenOrientation="portrait" />
-         <activity
+        <activity
             android:name="com.bookingsystem.android.ui.QCActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.bookingsystem.android.ui.PLActivity"
             android:screenOrientation="portrait" />
-      
         <activity
             android:name="com.bookingsystem.android.ui.GroundDetail"
             android:screenOrientation="portrait" />
@@ -176,6 +173,12 @@
         <activity
             android:name="com.bookingsystem.android.ui.GroundInfoDetail"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.RefundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bookingsystem.android.ui.WeatherActivity"
+            android:screenOrientation="portrait" />
 
         <service android:name="com.bookingsystem.android.service.DownloadAppService" >
         </service>
@@ -210,15 +213,18 @@
             android:name="com.umeng.update.UpdateDialogActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-        
-        
         <activity
-            android:name="com.alipay.android.app.sdk.WapPayActivity"
-            android:screenOrientation="portrait" >
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
         </activity>
-       
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
     </application>
-
-   
 
 </manifest>

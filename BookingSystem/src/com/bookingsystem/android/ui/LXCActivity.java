@@ -234,6 +234,7 @@ public class LXCActivity extends MBaseActivity implements OnClickListener {
 						it.putExtra(listAdapter.getJumpAs(), JSONUtil
 								.getString(jo, listAdapter.getJumpKey()));
 						it.putExtra("type", 2);
+						it.putExtra("city", JSONUtil.getString(jo, "city"));
 					} catch (Exception e) {
 					}
 					startActivity(it);

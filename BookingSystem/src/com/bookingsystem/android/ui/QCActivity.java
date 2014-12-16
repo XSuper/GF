@@ -205,6 +205,8 @@ public class QCActivity extends MBaseActivity implements OnClickListener {
 				mnet.addparam("city", MApplication.sCity);
 				mnet.addparam("province", MApplication.sProvince);
 			}
+		}else{
+			mnet.addparam("province", "全国");
 		}
 		mnet.addparam("ordertype", paixuId);
 		mnet.addparam("desctype", desctype);
@@ -230,6 +232,7 @@ public class QCActivity extends MBaseActivity implements OnClickListener {
 						it.putExtra(listAdapter.getJumpAs(), JSONUtil
 								.getString(jo, listAdapter.getJumpKey()));
 						it.putExtra("type", 1);
+						it.putExtra("city", JSONUtil.getString(jo, "city"));
 					} catch (Exception e) {
 					}
 					startActivity(it);

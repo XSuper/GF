@@ -56,10 +56,14 @@ public class QCOrderDetail extends MBaseActivity {
 	TextView pcount;
 	@InjectView(id = R.id.position)
 	TextView position;
+	@InjectView(id = R.id.prompttxt)
+	TextView prompt;
+	
 
 	@InjectExtra(name="id")String id;
 	@InjectExtra(name="pay")
 	boolean pay;
+	int status;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -71,7 +75,7 @@ public class QCOrderDetail extends MBaseActivity {
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
 		mAbTitleBar.setTitleText("订单详情");
 		mAbTitleBar.getLogoView().setBackgroundResource(R.drawable.back);
-		
+		status = getIntent().getIntExtra("status",0);
 		loadData();
 	}
 	JSONObject jo;
@@ -133,6 +137,19 @@ public class QCOrderDetail extends MBaseActivity {
 						"price");
 				ViewUtil.bindView(onePrice, JSONUtil.getString(jo, "price"),
 						"price");
+				switch (status) {
+				case 0:
+				case 1:
+				case 2:
+					ViewUtil.bindView(prompt, "预  付  款");
+					break;
+				case 3:
+				case 4:
+				case 5:
+					ViewUtil.bindView(prompt, "退款金额");
+					break;
+
+				}
 
 			}
 		});

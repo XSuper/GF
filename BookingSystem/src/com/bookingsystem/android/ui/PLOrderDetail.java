@@ -53,11 +53,16 @@ public class PLOrderDetail extends MBaseActivity {
 	TextView age;
 	@InjectView(id = R.id.submit)
 	Button submit;
-
+	@InjectView(id=R.id.prompttxt)
+	TextView prompt;
+	
+	
 	@InjectExtra(name = "id")
 	String id;
 	@InjectExtra(name = "pay")
 	boolean pay;
+	
+	int status;
 
 	// @InjectExtra(name="type")String mType;
 	@Override
@@ -71,7 +76,7 @@ public class PLOrderDetail extends MBaseActivity {
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
 		mAbTitleBar.setTitleText("订单详情");
 		mAbTitleBar.getLogoView().setBackgroundResource(R.drawable.back);
-
+		status = getIntent().getIntExtra("status", 0);
 		loadData();
 
 	}
@@ -147,6 +152,21 @@ public class PLOrderDetail extends MBaseActivity {
 				}
 				ViewUtil.bindView(totalPrice,
 						JSONUtil.getString(jo, "totalprice"), "price");
+				
+				switch (status) {
+				case 0:
+				case 1:
+				case 2:
+					ViewUtil.bindView(prompt, "预  付  款");
+					break;
+				case 3:
+				case 4:
+				case 5:
+					ViewUtil.bindView(prompt, "退款金额");
+					break;
+
+				}
+				
 				ViewUtil.bindView(payPrice, JSONUtil.getString(jo, "payprice"),
 						"price");
 

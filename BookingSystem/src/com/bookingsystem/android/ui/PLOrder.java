@@ -48,6 +48,7 @@ public class PLOrder extends MBaseActivity{
 	TextView tel;
 	@InjectView(id=R.id.age)
 	TextView age;
+	
 	@InjectView(id=R.id.submit)
 	Button submit;
 

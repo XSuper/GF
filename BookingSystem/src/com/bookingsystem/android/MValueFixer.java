@@ -13,26 +13,22 @@ import com.bookingsystem.android.util.StringUtils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 public class MValueFixer implements ValueFix {
-	
-	
-	// 头像用圆角
-		public static DisplayImageOptions optionsHeadRound;
-		public static Map<String, DisplayImageOptions> imageOptions;
 
-		public MValueFixer() {
-			imageOptions = new HashMap<String, DisplayImageOptions>();
-			DisplayImageOptions optionsDefault = new DisplayImageOptions.Builder()
-			.showImageOnLoading(R.drawable.imgdefault)
-			.showImageForEmptyUri(R.drawable.imgdefault)
-			.showImageOnFail(R.drawable.imgdefault)
-			.cacheInMemory(true)
-			.cacheOnDisk(true)
-			.considerExifParams(true)
-			.bitmapConfig(Bitmap.Config.RGB_565)
-			.build();
-			
-			imageOptions.put("default", optionsDefault);
-		}
+	// 头像用圆角
+	public static DisplayImageOptions optionsHeadRound;
+	public static Map<String, DisplayImageOptions> imageOptions;
+
+	public MValueFixer() {
+		imageOptions = new HashMap<String, DisplayImageOptions>();
+		DisplayImageOptions optionsDefault = new DisplayImageOptions.Builder()
+				.showImageOnLoading(R.drawable.imgdefault)
+				.showImageForEmptyUri(R.drawable.imgdefault)
+				.showImageOnFail(R.drawable.imgdefault).cacheInMemory(true)
+				.cacheOnDisk(true).considerExifParams(true)
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
+
+		imageOptions.put("default", optionsDefault);
+	}
 
 	@Override
 	public Object fix(Object o, String type) {
@@ -50,7 +46,7 @@ public class MValueFixer implements ValueFix {
 		} else if ("price".equals(type)) {
 			return " ¥" + StringUtils.toDouble(o);
 		} else if ("priceRMB".equals(type)) {
-			return " ¥" + StringUtils.toDouble(o)+"RMB";
+			return " ¥" + StringUtils.toDouble(o) + "RMB";
 		} else if ("address".equals(type)) {
 			return " 地址：" + o;
 		} else if ("addresshide".equals(type)) {
@@ -116,9 +112,15 @@ public class MValueFixer implements ValueFix {
 				return "申请退款";
 			} else if ("2".equals(o.toString().trim())) {
 				return "已完成";
+			} else if ("3".equals(o.toString().trim())) {
+				return "退款中";
+			} else if ("4".equals(o.toString().trim())) {
+				return "退款成功";
+			} else if ("5".equals(o.toString().trim())) {
+				return "已审核";
 			}
 
-		}else if("pricetype".equals(type)){
+		} else if ("pricetype".equals(type)) {
 			if ("1".equals(o.toString().trim())) {
 				return "元/盒";
 			} else if ("2".equals(o.toString().trim())) {
